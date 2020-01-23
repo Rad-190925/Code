@@ -17,6 +17,8 @@ from fastai.data import *
 from fastai.metrics import *
 from fastai.train import *
 
+model = tvm.densenet161
+
 learner = ConvLearner(hipOA_labelbunch, model, metrics=[accuracy], pretrained = True, ps = 0.4, callback_fns=[ShowGraph, BnFreeze])
 
 class MTL_block (nn.Module):
